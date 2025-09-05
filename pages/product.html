@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">MyShop</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../pages/cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <section class="product-details">
+    
+  </section>
+</body>
+
+
+
+<script>
+    // product.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+
+  if (!productId) {
+    document.querySelector(".product-details").innerHTML = "<p>No product selected.</p>";
+    return;
+  }
+
+  fetch(`https://api.escuelajs.co/api/v1/products/${productId}`)
+    .then(res => res.json())
+    .then(product => {
+      const container = document.querySelector(".product-details");
+      container.innerHTML = `
+        <img src="${product.images[0]}" alt="${product.title}" style="max-width:300px;">
+        <div>
+          <h2>${product.title}</h2>
+          <p><strong>Price:</strong> $${product.price}</p>
+          <p>${product.description}</p>
+          <label>Quantity:</label>
+          <input id="quantity" type="number" value="1" min="1">
+          <button class="btn" onclick="addToCart(${product.id}, '${product.title.replace(/'/g, "\\'")}', ${product.price}, '${product.images[0]}')">
+            Add to Cart
+          </button>
+        </div>
+      `;
+    })
+    .catch(err => console.error("Error loading product:", err));
+});
+
+function addToCart(id, title, price, image) {
+  const qty = parseInt(document.getElementById("quantity").value) || 1;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+    existing.quantity += qty;
+  } else {
+    cart.push({ id, title, price, image, quantity: qty });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Item added to cart!");
+}
+
+</script>  
+
+<!-- <script src="../script/index.js"></script> -->
+</html>
