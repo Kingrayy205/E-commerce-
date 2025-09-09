@@ -175,8 +175,7 @@ section > h2 {
 
 .categoryproduct {
     text-align: center;
-    width: 250px;
-    height: 250px;
+    width: 100%
 }
 
 footer {
