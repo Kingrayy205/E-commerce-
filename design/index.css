@@ -141,8 +141,7 @@ section > h2 {
 
 .product { 
     text-align: center;
-    width: 250px;
-    height: 250px;
+    width: 100%
 }
 
 .categories {
