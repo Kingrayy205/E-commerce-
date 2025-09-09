@@ -1,3 +1,5 @@
+
+
 cartcount = document.querySelectorAll(".cart-count");
 cartcount.forEach(count => count.textContent = 0);
 
@@ -109,8 +111,6 @@ function goToCheckout() {
 
 
 
-
-
 // // homepage.js
 
 // document.addEventListener("DOMContentLoaded", () => {
@@ -151,7 +151,7 @@ function goToCheckout() {
 //         div.classList.add("productcontainer");
 //         div.style.padding = "0.3em"
 //         div.innerHTML = `
-//           <img src="${prod.images[0]}" alt="${prod.title}">
+//           <img src="${prod.image}" alt="${prod.title}">
 //           <h3>${prod.title}</h3>
 //           <p>$${prod.price}</p>
 //           <br>
