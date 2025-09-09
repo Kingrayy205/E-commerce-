@@ -3,19 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyShop - Checkout</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Rayo</title>
+  <link rel="stylesheet" href="../design/checkout.css">
+  <link rel="icon" type="image/x-icon" href="../media resourses/ChatGPT Image Aug 28, 2025, 05_00_42 AM.png">
+  <script src="https://kit.fontawesome.com/67d0c5075e.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <h1 class="logo">MyShop</h1>
+    <h1 class="logo">Rayo</h1>
     <nav>
       <a href="../index.html">Home</a>
       <a href="../pages/cart.html">Cart</a>
       <a href="../pages/checkout.html">Checkout</a>
     </nav>
   </header>
+   
+ <section>
+    <h3>Checkout</h3>
 
+    <div id="checkout-items"></div>
+    <div class="cart-summary">
+      <p><strong>Total: $<span id="checkout-total">0</span></strong></p>
+      <button class="btn" id="proceed-btn">Proceed to Checkout</button>
+    </div>
+
+    <div id="confirmation">
+      ✅ Thank you! Your order has been placed.
+    </div>
+</section>
+
+
+<script>
+  document.getElementById("confirmation").style.display = "none"
+  function renderCheckout() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let checkoutContainer = document.getElementById("checkout-items");
+  let total = 0;
+
+  if (cart.length === 0) {
+    checkoutContainer.innerHTML = "<p>Your cart is empty.</p>";
+    document.querySelector(".cart-summary").style.display = "none";
+    return;
+  }
+
+  checkoutContainer.innerHTML = ""; // clear before rendering
+  cart.forEach(item => {
+    let div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.title}">
+      <p>${item.title} - $${item.price} × ${item.quantity}</p>
+    `;
+    checkoutContainer.appendChild(div);
+
+    total += item.price * item.quantity;
+  });
+
+  document.getElementById("checkout-total").textContent = total.toFixed(2);
+}
+
+// Handle Proceed to Checkout
+document.getElementById("proceed-btn").addEventListener("click", () => {
+  localStorage.removeItem("cart"); // clear cart
+  document.querySelector(".cart-summary").style.display = "none";
+  document.getElementById("checkout-items").style.display = "none";
+  document.getElementById("confirmation").style.display = "block";
+});
+
+document.addEventListener("DOMContentLoaded", renderCheckout);
+
+</script>
  
 </body>
 </html>

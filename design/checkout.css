@@ -1,0 +1,58 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 2.6;
+    background-color: rgb(255, 203, 59);
+    color: black;
+}
+
+header {
+    background: white;
+    color:rgb(255, 203, 59);
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1em;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    font-size: large;
+}
+
+.logo{
+    color: black;
+    font-size: 1.8em;
+}
+
+section {
+    padding-left: 0.5em;
+}
+
+a {
+    color: rgb(255, 203, 59);
+    text-decoration: none;
+}
+
+button {
+    font-size: 1.1em;
+    padding-inline: 0.9rem;
+    padding-block: 0.5rem;
+    border-radius: 1em;
+    background-color: black;
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(255, 203, 59);
+    color: black;
+    cursor: pointer;
+}
