@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
       total += item.price * item.quantity;
       let div = document.createElement("div");
       div.classList.add("productcontainer")
-      div.style.height = "350px"
+      div.style.height = "400px"
       div.style.border = "0.3em solid black";
       div.innerHTML = `
-        <img src="${item.image}" class"product">
+        <img src="${item.image}" style="width: 100%;" class"product">
         <br>
         <p>${item.title} - $${item.price} x ${item.quantity}</p>
         <button onclick="removeFromCart(${item.id})">❌</button>
