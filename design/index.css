@@ -137,8 +137,6 @@ section > h2 {
     margin-left: 0.5em;
 }
 
-
-
 .product { 
     text-align: center;
     width: 100%
@@ -165,7 +163,7 @@ section > h2 {
 .categorycontainer{
     width: 280px;
     border: 2px solid black;
-    height: 350px;
+    height: 330px;
    
 }
 
@@ -287,7 +285,7 @@ div > a {
 
     .categorycontainer{
         width: 300px;
-        height: 320px;
+        height: 300px;
     }
 
     .about-section {
@@ -351,7 +349,7 @@ div > a {
 
     .categorycontainer{
         width: 250px;
-        height: 320px;
+        height: 300px;
     }
 
     footer {
@@ -437,7 +435,7 @@ main {
 }
 
 .product {
-    width: 200px;
+    width: 100%;
     padding: 0.5em;
 }
 
@@ -453,7 +451,8 @@ main {
 }
 
 .categoryproduct {
-    width: 200px;
+    width: 100%;
+    height: 300px;
     padding: 0.5em;
 }
 
@@ -555,7 +554,7 @@ div > a {
 
     .categorycontainer{
         width: 340px;
-        height: 320px;
+        height: 250px;
     }
     
     .categoryproduct {
@@ -756,8 +755,7 @@ footer {
     }
 
     .product {
-        width: 150px;
-        height: 150px;
+        width: 100%;
     }
 
     .categorycontainer{
@@ -768,7 +766,6 @@ footer {
     }
 
     .categoryproduct {
-        width: 150px;
-        height: 150px;
+        width: 100;
     }
 }
