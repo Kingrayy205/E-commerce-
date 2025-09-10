@@ -116,7 +116,7 @@ section > h2 {
 .productcontainer{
   width: 280px; 
   border: 2px solid black;
-  height: 350px;
+  height: 400px;
 }
 
 .productcontainer:hover {
@@ -275,7 +275,7 @@ div > a {
 
     .productcontainer{
         width: 300px; 
-        height: 320px;
+        height: 350px;
     }
     
     .categoriescarousel {
@@ -340,7 +340,7 @@ div > a {
 
     .productcontainer{
         width: 250px; 
-        height: 320px;
+        height: 350px;
     }
 
     .categoriescarousel {
@@ -540,7 +540,7 @@ div > a {
 
     .productcontainer{
         width: 340px; 
-        height: 320px; 
+        height: 350px; 
     }
     
     .product {
